@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>一般社団法人アケル ｜ 決算公告</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --sun: #f5a623; --sun-deep: #e07b00; --green: #4a8c5c;
+      --sky: #fdf6ec; --warm-white: #fffcf8; --border: #e8d9c4;
+      --text: #3a2e20; --muted: #8a7a68; --max-w: 880px;
+    }
+    body { font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; color: var(--text); background: var(--warm-white); line-height: 1.75; font-size: 15px; }
+    a { color: var(--sun-deep); text-decoration: none; }
+    header { background: linear-gradient(135deg, #e07b00 0%, #f5a623 50%, #f7c05a 100%); color: #fff; text-align: center; padding: 0; position: relative; overflow: hidden; }
+    header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 60%, rgba(255,255,255,0.08) 0%, transparent 50%), radial-gradient(circle at 80% 30%, rgba(255,255,255,0.06) 0%, transparent 40%); }
+    .header-inner { position: relative; padding: 36px 24px 30px; }
+    .sun-icon { font-size: 42px; line-height: 1; margin-bottom: 10px; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.15)); }
+    .org-type { font-size: 11px; letter-spacing: 0.2em; opacity: 0.85; margin-bottom: 6px; text-transform: uppercase; }
+    header h1 { font-size: clamp(24px, 6vw, 38px); font-weight: 800; letter-spacing: 0.06em; text-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+    header .tagline { font-size: 12px; opacity: 0.75; margin-top: 8px; letter-spacing: 0.1em; }
+    nav { background: var(--green); text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    nav a { display: inline-block; color: #fff; padding: 11px 26px; font-size: 13px; letter-spacing: 0.06em; transition: background 0.2s; text-decoration: none; }
+    nav a:hover { background: rgba(0,0,0,0.12); }
+    main { max-width: var(--max-w); margin: 0 auto; padding: 44px 20px 70px; }
+    .section-heading { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+    .section-heading .icon { font-size: 26px; flex-shrink: 0; }
+    .section-heading h2 { font-size: 21px; font-weight: 800; color: var(--sun-deep); border-bottom: 3px solid var(--sun); padding-bottom: 4px; }
+    .section-heading .sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .notice { background: #fff8ee; border: 1px solid #f0d9b0; border-left: 4px solid var(--sun); border-radius: 0 6px 6px 0; padding: 14px 18px; margin-bottom: 28px; font-size: 13px; color: var(--muted); line-height: 1.65; }
+    .notice strong { color: var(--text); }
+    .announcement { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 52px; box-shadow: 0 3px 14px rgba(200,140,30,0.10); }
+    .announcement-header { background: linear-gradient(90deg, var(--sun-deep), var(--sun)); color: #fff; padding: 15px 24px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .announcement-header .title { font-size: 16px; font-weight: 700; letter-spacing: 0.04em; }
+    .announcement-header .period { font-size: 12px; background: rgba(255,255,255,0.2); border-radius: 20px; padding: 3px 12px; letter-spacing: 0.04em; }
+    .announcement-body { padding: 26px 24px; background: #fff; }
+    .bs-meta { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; flex-wrap: wrap; gap: 6px; }
+    .bs-meta .date-label { font-size: 13px; color: var(--muted); }
+    .bs-meta .unit-label { font-size: 11px; color: var(--muted); background: var(--sky); border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px; }
+    .bs-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 620px) { .bs-layout { grid-template-columns: 1fr; } }
+    .bs-table { width: 100%; border-collapse: collapse; font-size: 13.5px; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); }
+    .bs-table caption { text-align: left; font-size: 13px; font-weight: 700; color: var(--green); padding: 0 0 8px 2px; letter-spacing: 0.04em; }
+    .bs-table th, .bs-table td { border: 1px solid var(--border); padding: 7px 11px; }
+    .bs-table thead th { background: var(--sky); text-align: center; font-weight: 700; font-size: 12px; color: var(--muted); letter-spacing: 0.05em; }
+    .bs-table .section-row td { background: #fff3e0; font-weight: 700; color: var(--sun-deep); font-size: 12.5px; letter-spacing: 0.04em; padding-left: 12px; }
+    .bs-table .indent-1 td:first-child { padding-left: 24px; }
+    .bs-table .indent-2 td:first-child { padding-left: 38px; color: var(--muted); font-size: 12px; }
+    .bs-table .subtotal-row td { background: #fdf0da; font-weight: 600; }
+    .bs-table .total-row td { background: #fde8c3; font-weight: 700; }
+    .bs-table .grand-total-row td { background: linear-gradient(90deg, #f5a623, #f7c05a); color: #3a1f00; font-weight: 800; font-size: 14px; }
+    .bs-table td.amount { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .bs-table td.center { text-align: center; color: var(--muted); font-size: 12px; }
+    .bs-note { margin-top: 16px; font-size: 12px; color: var(--muted); line-height: 1.7; border-top: 1px dashed var(--border); padding-top: 12px; }
+    .past-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .past-list li { background: var(--sky); border: 1px solid var(--border); border-radius: 6px; padding: 12px 18px; display: flex; align-items: center; gap: 14px; font-size: 14px; }
+    .past-list .badge { background: var(--border); color: var(--muted); border-radius: 4px; padding: 2px 10px; font-size: 12px; white-space: nowrap; }
+    .past-list .placeholder-note { color: var(--muted); font-size: 13px; font-style: italic; }
+    .accordion { display: flex; flex-direction: column; gap: 8px; }
+    .acc-item { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(200,140,30,0.06); }
+    .acc-trigger { width: 100%; background: var(--sky); border: none; cursor: pointer; padding: 14px 18px; display: flex; align-items: center; gap: 10px; text-align: left; transition: background 0.2s; font-family: inherit; }
+    .acc-trigger:hover { background: #fdeece; }
+    .acc-trigger[aria-expanded="true"] { background: #fde8c3; }
+    .acc-label { flex: 1; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+    .acc-period { font-size: 14px; font-weight: 700; color: var(--text); }
+    .acc-date { font-size: 12px; color: var(--muted); }
+    .acc-badge { font-size: 11px; border-radius: 4px; padding: 2px 10px; white-space: nowrap; font-weight: 600; }
+    .acc-badge.upcoming { background: var(--border); color: var(--muted); }
+    .acc-badge.published { background: #d4edda; color: #276238; }
+    .acc-arrow { font-size: 11px; color: var(--muted); transition: transform 0.25s ease; flex-shrink: 0; }
+    .acc-trigger[aria-expanded="true"] .acc-arrow { transform: rotate(90deg); }
+    .acc-body { overflow: hidden; max-height: 0; transition: max-height 0.3s ease; }
+    .acc-body:not([hidden]) { max-height: 3000px; }
+    .acc-body[hidden] { display: block !important; max-height: 0; }
+    .acc-content { padding: 18px 20px; background: #fff; border-top: 1px solid var(--border); }
+    .info-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; margin-top: 16px; }
+    .info-item { background: #fff; border: 1px solid var(--border); border-top: 3px solid var(--sun); border-radius: 0 0 8px 8px; padding: 14px 16px; box-shadow: 0 2px 6px rgba(200,140,30,0.06); }
+    .info-item .label { font-size: 11px; color: var(--muted); letter-spacing: 0.1em; margin-bottom: 5px; text-transform: uppercase; }
+    .info-item .value { font-size: 14px; font-weight: 700; color: var(--text); line-height: 1.5; }
+    .section-gap { margin-top: 56px; }
+    footer { background: linear-gradient(135deg, #3a2e20, #5a4030); color: rgba(255,255,255,0.65); text-align: center; padding: 30px 20px; font-size: 12px; line-height: 2; }
+    footer strong { color: #fff; }
+    footer .footer-logo { font-size: 22px; margin-bottom: 6px; }
+  </style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="sun-icon">☀️</div>
+    <div class="org-type">General Incorporated Association</div>
+    <h1>一般社団法人アケルあ</h1>
+    <div class="tagline">再生可能エネルギー事業者 ｜ Renewable Energy</div>
+  </div>
+</header>
+<nav>
+  <a href="#kessankoukoku">📋 決算公告</a>
+  <a href="#about">🏢 法人概要</a>
+</nav>
+<main>
+  <section id="kessankoukoku">
+    <div class="section-heading">
+      <div class="icon">📋</div>
+      <div>
+        <h2>決算公告</h2>
+        <div class="sub">一般社団法人及び一般財団法人に関する法律 第128条第1項 に基づく公告</div>
+      </div>
+    </div>
+    <div class="notice">
+      <strong>公告について：</strong>
+      当法人は、一般社団法人及び一般財団法人に関する法律第128条第1項の規定に基づき、
+      下記のとおり貸借対照表の要旨を公告します。
+    </div>
+
+    
+    <div class="announcement">
+      <div class="announcement-header">
+        <span class="title">第◯期　貸借対照表の要旨</span>
+        <span class="period">2024年4月1日 〜 2025年3月31日</span>
+      </div>
+      <div class="announcement-body">
+        
+    <div class="bs-meta">
+      <span class="date-label">貸借対照表　2025年3月31日 現在</span>
+      <span class="unit-label">単位：円</span>
+    </div>
+    <div class="bs-layout">
+      <div>
+        <table class="bs-table">
+          <caption>【資産の部】</caption>
+          <thead><tr><th style="width:62%">科　目</th><th>金　額</th></tr></thead>
+          <tbody>
+            <tr class="section-row"><td colspan="2">Ⅰ　流動資産</td></tr>
+            <tr class="indent-1"><td>現金及び預金</td><td class="amount">XX,XXX,XXX</td></tr>
+            <tr class="indent-1"><td>未収入金</td><td class="amount">XX,XXX,XXX</td></tr>
+            <tr class="indent-1"><td>前払費用</td><td class="amount">XX,XXX,XXX</td></tr>
+            <tr class="indent-1"><td>その他</td><td class="amount">XX,XXX,XXX</td></tr>
+            <tr class="subtotal-row"><td>流動資産合計</td><td class="amount">XX,XXX,XXX</td></tr>
+            <tr class="section-row"><td colspan="2">Ⅱ　固定資産</td></tr>
+            <tr class="indent-2"><td>（有形固定資産）</td><td class="center">—</td></tr>
+            <tr class="indent-1"><td>太陽光発電設備</td><td class="amount">XX,XXX,XXX</td></tr>
+            <tr class="indent-1"><td>器具備品</td><td class="amount">XX,XXX,XXX</td></tr>
+            <tr class="indent-2"><td>（その他固定資産）</td><td class="center">—</td></tr>
+            <tr class="indent-1"><td>敷金・保証金</td><td class="amount">XX,XXX,XXX</td></tr>
+            <tr class="subtotal-row"><td>固定資産合計</td><td class="amount">XX,XXX,XXX</td></tr>
+            <tr class="grand-total-row"><td>資産合計</td><td class="amount">XXX,XXX,XXX</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <table class="bs-table">
+          <caption>【負債の部】</caption>
+          <thead><tr><th style="width:62%">科　目</th><th>金　額</th></tr></thead>
+          <tbody>
+            <tr class="section-row"><td colspan="2">Ⅰ　流動負債</td></tr>
+            <tr class="indent-1"><td>未払金</td><td class="amount">XX,XXX,XXX</td></tr>
+            <tr class="indent-1"><td>未払費用</td><td class="amount">XX,XXX,XXX</td></tr>
+            <tr class="indent-1"><td>前受金</td><td class="amount">XX,XXX,XXX</td></tr>
+            <tr class="indent-1"><td>短期借入金</td><td class="amount">XX,XXX,XXX</td></tr>
+            <tr class="subtotal-row"><td>流動負債合計</td><td class="amount">XX,XXX,XXX</td></tr>
+            <tr class="section-row"><td colspan="2">Ⅱ　固定負債</td></tr>
+            <tr class="indent-1"><td>長期借入金</td><td class="amount">XX,XXX,XXX</td></tr>
+            <tr class="subtotal-row"><td>固定負債合計</td><td class="amount">XX,XXX,XXX</td></tr>
+            <tr class="total-row"><td>負債合計</td><td class="amount">XX,XXX,XXX</td></tr>
+          </tbody>
+        </table>
+        <table class="bs-table">
+          <caption>【純資産の部】</caption>
+          <thead><tr><th style="width:62%">科　目</th><th>金　額</th></tr></thead>
+          <tbody>
+            <tr class="section-row"><td colspan="2">Ⅰ　基金等</td></tr>
+            <tr class="indent-1"><td>基金</td><td class="amount">XX,XXX,XXX</td></tr>
+            <tr class="indent-1"><td>代替基金</td><td class="amount">XX,XXX,XXX</td></tr>
+            <tr class="section-row"><td colspan="2">Ⅱ　損益</td></tr>
+            <tr class="indent-1"><td>当期正味財産増減額</td><td class="amount">▲ X,XXX,XXX</td></tr>
+            <tr class="indent-1"><td>前期繰越正味財産額</td><td class="amount">XX,XXX,XXX</td></tr>
+            <tr class="subtotal-row"><td>純資産合計</td><td class="amount">XX,XXX,XXX</td></tr>
+            <tr class="grand-total-row"><td>負債及び純資産合計</td><td class="amount">XXX,XXX,XXX</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="bs-note">
+      ※ 本公告は、一般社団法人及び一般財団法人に関する法律第128条第1項の規定に基づく貸借対照表の要旨です。
+    </div>
+      </div>
+    </div>
+
+    <div class="section-heading">
+      <div class="icon">🗂️</div>
+      <div>
+        <h2>過去の決算公告</h2>
+        <div class="sub">Past Announcements — クリックで展開</div>
+      </div>
+    </div>
+    
+    <div class="accordion">
+      
+      <div class="acc-item">
+        <button class="acc-trigger" aria-expanded="false">
+          <span class="acc-label">
+            <span class="acc-period">第◯期　2026年3月期</span>
+            <span class="acc-date">（2025年4月1日 〜 2026年3月31日）</span>
+          </span>
+          <span class="acc-badge published">公告済</span>
+          <span class="acc-arrow">▶</span>
+        </button>
+        <div class="acc-body" hidden>
+          <div class="acc-content">
+            
+    <div class="bs-meta">
+      <span class="date-label">貸借対照表　2026年3月31日 現在</span>
+      <span class="unit-label">単位：円</span>
+    </div>
+    <div class="bs-layout">
+      <div>
+        <table class="bs-table">
+          <caption>【資産の部】</caption>
+          <thead><tr><th style="width:62%">科　目</th><th>金　額</th></tr></thead>
+          <tbody>
+            <tr class="section-row"><td colspan="2">Ⅰ　流動資産</td></tr>
+            <tr class="indent-1"><td>現金及び預金</td><td class="amount">XX,XXX,XXX</td></tr>
+            <tr class="indent-1"><td>未収入金</td><td class="amount">X,XXX,XXX</td></tr>
+            <tr class="indent-1"><td>前払費用</td><td class="amount">XXX,XXX</td></tr>
+            <tr class="indent-1"><td>その他</td><td class="amount">XXX,XXX</td></tr>
+            <tr class="subtotal-row"><td>流動資産合計</td><td class="amount">XX,XXX,XXX</td></tr>
+            <tr class="section-row"><td colspan="2">Ⅱ　固定資産</td></tr>
+            <tr class="indent-2"><td>（有形固定資産）</td><td class="center">—</td></tr>
+            <tr class="indent-1"><td>太陽光発電設備</td><td class="amount">XX,XXX,XXX</td></tr>
+            <tr class="indent-1"><td>器具備品</td><td class="amount">XXX,XXX</td></tr>
+            <tr class="indent-2"><td>（その他固定資産）</td><td class="center">—</td></tr>
+            <tr class="indent-1"><td>敷金・保証金</td><td class="amount">XXX,XXX</td></tr>
+            <tr class="subtotal-row"><td>固定資産合計</td><td class="amount">XX,XXX,XXX</td></tr>
+            <tr class="grand-total-row"><td>資産合計</td><td class="amount">XXX,XXX,XXX</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <table class="bs-table">
+          <caption>【負債の部】</caption>
+          <thead><tr><th style="width:62%">科　目</th><th>金　額</th></tr></thead>
+          <tbody>
+            <tr class="section-row"><td colspan="2">Ⅰ　流動負債</td></tr>
+            <tr class="indent-1"><td>未払金</td><td class="amount">X,XXX,XXX</td></tr>
+            <tr class="indent-1"><td>未払費用</td><td class="amount">XXX,XXX</td></tr>
+            <tr class="indent-1"><td>前受金</td><td class="amount">XXX,XXX</td></tr>
+            <tr class="indent-1"><td>短期借入金</td><td class="amount">XX,XXX,XXX</td></tr>
+            <tr class="subtotal-row"><td>流動負債合計</td><td class="amount">XX,XXX,XXX</td></tr>
+            <tr class="section-row"><td colspan="2">Ⅱ　固定負債</td></tr>
+            <tr class="indent-1"><td>長期借入金</td><td class="amount">XX,XXX,XXX</td></tr>
+            <tr class="subtotal-row"><td>固定負債合計</td><td class="amount">XX,XXX,XXX</td></tr>
+            <tr class="total-row"><td>負債合計</td><td class="amount">XX,XXX,XXX</td></tr>
+          </tbody>
+        </table>
+        <table class="bs-table">
+          <caption>【純資産の部】</caption>
+          <thead><tr><th style="width:62%">科　目</th><th>金　額</th></tr></thead>
+          <tbody>
+            <tr class="section-row"><td colspan="2">Ⅰ　基金等</td></tr>
+            <tr class="indent-1"><td>基金</td><td class="amount">XX,XXX,XXX</td></tr>
+            <tr class="indent-1"><td>代替基金</td><td class="amount">X,XXX,XXX</td></tr>
+            <tr class="section-row"><td colspan="2">Ⅱ　損益</td></tr>
+            <tr class="indent-1"><td>当期正味財産増減額</td><td class="amount">▲ X,XXX,XXX</td></tr>
+            <tr class="indent-1"><td>前期繰越正味財産額</td><td class="amount">X,XXX,XXX</td></tr>
+            <tr class="subtotal-row"><td>純資産合計</td><td class="amount">XX,XXX,XXX</td></tr>
+            <tr class="grand-total-row"><td>負債及び純資産合計</td><td class="amount">XXX,XXX,XXX</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="bs-note">
+      ※ 本公告は、一般社団法人及び一般財団法人に関する法律第128条第1項の規定に基づく貸借対照表の要旨です。
+    </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section-gap">
+    <div class="section-heading">
+      <div class="icon">🏢</div>
+      <div>
+        <h2>法人概要</h2>
+        <div class="sub">Organization Information</div>
+      </div>
+    </div>
+    <div class="info-grid">
+      <div class="info-item"><div class="label">法人名称</div><div class="value">一般社団法人アケルあ</div></div>
+      <div class="info-item"><div class="label">設立年月日</div><div class="value">20XX年XX月XX日</div></div>
+      <div class="info-item"><div class="label">代表者</div><div class="value">代表理事　氏名</div></div>
+      <div class="info-item"><div class="label">所在地</div><div class="value">〒XXX-XXXX　○○県○○市○○町X-X-X</div></div>
+      <div class="info-item"><div class="label">事業年度</div><div class="value">4月1日 〜 翌3月31日</div></div>
+      <div class="info-item"><div class="label">主な事業</div><div class="value">太陽光発電事業<br>再生可能エネルギー事業</div></div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="footer-logo">☀️</div>
+  <p><strong>一般社団法人アケルあ</strong></p>
+  <p>〒XXX-XXXX　○○県○○市○○町X-X-X</p>
+  <p style="margin-top:8px; font-size:11px; opacity:0.5;">&copy; 一般社団法人アケルあ. All rights reserved.</p>
+</footer>
+<script>
+  document.querySelectorAll('.acc-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const expanded = trigger.getAttribute('aria-expanded') === 'true';
+      const body = trigger.nextElementSibling;
+      trigger.setAttribute('aria-expanded', !expanded);
+      if (expanded) { body.setAttribute('hidden', ''); }
+      else { body.removeAttribute('hidden'); }
+    });
+  });
+</script>
+</body>
+</html>
