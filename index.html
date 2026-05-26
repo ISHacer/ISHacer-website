@@ -11,133 +11,234 @@
       --sky: #fdf6ec; --warm-white: #fffcf8; --border: #e8d9c4;
       --text: #3a2e20; --muted: #8a7a68; --max-w: 900px;
     }
-    body { font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; color: var(--text); background: var(--warm-white); line-height: 1.75; font-size: 15px; }
+    body {
+      font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+      color: var(--text); background: var(--warm-white);
+      line-height: 1.75; font-size: 15px;
+    }
 
+    /* ===== Header ===== */
     header {
-      color: #fff; text-align: center; position: relative; overflow: hidden;
-      background: #1a1a1a;
+      color: #fff; text-align: center;
+      position: relative; overflow: hidden;
+      background: #1a1a1a; min-height: 220px;
+      display: flex; align-items: center; justify-content: center;
     }
     header .hero-img {
-      position: absolute; inset: 0; width: 100%; height: 100%;
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
       object-fit: cover; object-position: center 40%;
-      display: block;
     }
     header::after {
-      content: '';
-      position: absolute; inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(20,10,0,0.35) 0%,
-        rgba(180,80,0,0.45) 60%,
-        rgba(30,15,0,0.65) 100%
-      );
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to bottom,
+        rgba(10,5,0,0.40) 0%,
+        rgba(160,70,0,0.50) 55%,
+        rgba(10,5,0,0.70) 100%);
     }
-    .header-inner { position: relative; z-index: 1; padding: 52px 24px 44px; }
-    .sun-icon { font-size: 42px; line-height: 1; margin-bottom: 10px; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5)); }
-    .org-type { font-size: 11px; letter-spacing: 0.25em; opacity: 0.9; margin-bottom: 8px; text-transform: uppercase; text-shadow: 0 1px 4px rgba(0,0,0,0.6); }
-    header h1 { font-size: clamp(26px, 6vw, 40px); font-weight: 800; letter-spacing: 0.06em; text-shadow: 0 2px 12px rgba(0,0,0,0.5); }
-    header .tagline { font-size: 13px; opacity: 0.88; margin-top: 10px; letter-spacing: 0.12em; text-shadow: 0 1px 6px rgba(0,0,0,0.5); }
+    .header-inner {
+      position: relative; z-index: 1;
+      padding: 52px 24px 44px;
+    }
+    .org-type {
+      font-size: 11px; letter-spacing: 0.25em; opacity: 0.85;
+      margin-bottom: 10px; text-transform: uppercase;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.7);
+    }
+    header h1 {
+      font-size: clamp(26px, 6vw, 42px); font-weight: 800;
+      letter-spacing: 0.06em;
+      text-shadow: 0 2px 14px rgba(0,0,0,0.6);
+    }
+    header .tagline {
+      font-size: 13px; opacity: 0.85; margin-top: 10px;
+      letter-spacing: 0.12em;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.6);
+    }
 
-    nav { background: var(--green); text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
-    nav a { display: inline-block; color: #fff; padding: 11px 26px; font-size: 13px; letter-spacing: 0.06em; transition: background 0.2s; text-decoration: none; }
-    nav a:hover { background: rgba(0,0,0,0.12); }
+    /* ===== Nav ===== */
+    nav { background: var(--green); text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.12); }
+    nav a {
+      display: inline-block; color: #fff; padding: 12px 28px;
+      font-size: 13px; letter-spacing: 0.08em;
+      transition: background 0.2s; text-decoration: none;
+    }
+    nav a:hover { background: rgba(0,0,0,0.14); }
 
-    main { max-width: var(--max-w); margin: 0 auto; padding: 44px 20px 70px; }
-
-    /* セクションバナー */
+    /* ===== Section Banner ===== */
     .section-banner {
-      position: relative; width: 100vw; left: 50%; right: 50%;
-      margin-left: -50vw; margin-right: -50vw;
-      height: 130px; overflow: hidden;
+      position: relative;
+      width: 100%; height: 120px;
+      overflow: hidden;
       margin-bottom: 36px;
     }
     .section-banner img {
-      width: 100%; height: 100%; object-fit: cover; object-position: center 55%;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 50%;
       display: block;
     }
     .section-banner::after {
       content: ''; position: absolute; inset: 0;
       background: linear-gradient(90deg,
-        rgba(15,8,0,0.72) 0%,
-        rgba(30,15,0,0.55) 40%,
-        rgba(15,8,0,0.45) 100%
-      );
+        rgba(10,5,0,0.78) 0%,
+        rgba(30,15,0,0.58) 45%,
+        rgba(10,5,0,0.42) 100%);
     }
     .section-banner-inner {
       position: absolute; inset: 0; z-index: 1;
       display: flex; flex-direction: column;
-      justify-content: center; padding: 0 40px;
+      justify-content: center; padding: 0 36px;
+    }
+    .accent-line {
+      width: 32px; height: 3px;
+      background: var(--sun); border-radius: 2px;
+      margin-bottom: 7px;
     }
     .section-banner h2 {
-      font-size: clamp(20px, 4vw, 30px);
-      font-weight: 800; color: #fff;
-      letter-spacing: 0.1em;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+      font-size: clamp(18px, 3.5vw, 26px); font-weight: 800;
+      color: #fff; letter-spacing: 0.10em;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.7);
       margin: 0;
     }
     .section-banner .sub {
-      font-size: 11px; color: rgba(255,255,255,0.7);
-      letter-spacing: 0.12em; margin-top: 5px;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.5);
-    }
-    .section-banner .accent-line {
-      width: 36px; height: 3px;
-      background: var(--sun);
-      margin-bottom: 8px;
-      border-radius: 2px;
+      font-size: 11px; color: rgba(255,255,255,0.72);
+      letter-spacing: 0.10em; margin-top: 5px;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
     }
 
-    .notice { background: #fff8ee; border: 1px solid #f0d9b0; border-left: 4px solid var(--sun); border-radius: 0 6px 6px 0; padding: 14px 18px; margin-bottom: 28px; font-size: 13px; color: var(--muted); line-height: 1.65; }
+    /* ===== Content wrapper ===== */
+    .content-wrap {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    section { padding-bottom: 20px; }
+    section + section { margin-top: 0; }
+
+    /* ===== Notice ===== */
+    .notice {
+      background: #fff8ee; border: 1px solid #f0d9b0;
+      border-left: 4px solid var(--sun);
+      border-radius: 0 6px 6px 0;
+      padding: 13px 18px; margin-bottom: 26px;
+      font-size: 13px; color: var(--muted); line-height: 1.65;
+    }
     .notice strong { color: var(--text); }
 
-    /* 最新期カード */
-    .latest-card { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 52px; box-shadow: 0 3px 14px rgba(200,140,30,0.10); }
-    .latest-card-header { background: linear-gradient(90deg, var(--sun-deep), var(--sun)); color: #fff; padding: 15px 24px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
-    .latest-card-header .title { font-size: 16px; font-weight: 700; letter-spacing: 0.04em; }
-    .latest-card-header .period-label { font-size: 12px; background: rgba(255,255,255,0.2); border-radius: 20px; padding: 3px 12px; }
-    .latest-card-header .badge-new { font-size: 11px; background: #fff; color: var(--sun-deep); border-radius: 20px; padding: 3px 12px; font-weight: 700; }
-    .latest-card-body { padding: 24px; background: #fff; }
+    /* ===== Latest card ===== */
+    .latest-card {
+      border: 1px solid var(--border); border-radius: 10px;
+      overflow: hidden; margin-bottom: 48px;
+      box-shadow: 0 3px 14px rgba(200,140,30,0.10);
+    }
+    .latest-card-header {
+      background: linear-gradient(90deg, var(--sun-deep), var(--sun));
+      color: #fff; padding: 14px 22px;
+      display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    }
+    .latest-card-header .title { font-size: 15px; font-weight: 700; letter-spacing: 0.04em; }
+    .latest-card-header .period-label {
+      font-size: 12px; background: rgba(255,255,255,0.2);
+      border-radius: 20px; padding: 3px 12px;
+    }
+    .latest-card-header .badge-new {
+      font-size: 11px; background: #fff; color: var(--sun-deep);
+      border-radius: 20px; padding: 3px 12px; font-weight: 700;
+    }
+    .latest-card-body { padding: 22px; background: #fff; }
 
-    .pdf-embed-wrap { width: 100%; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: #f5f5f5; }
-    .pdf-embed-wrap iframe { width: 100%; height: 640px; border: none; display: block; }
-    @media (max-width: 600px) { .pdf-embed-wrap iframe { height: 420px; } }
+    .pdf-embed-wrap {
+      width: 100%; border: 1px solid var(--border);
+      border-radius: 8px; overflow: hidden; background: #f0f0f0;
+    }
+    .pdf-embed-wrap iframe { width: 100%; height: 620px; border: none; display: block; }
+    @media (max-width: 600px) { .pdf-embed-wrap iframe { height: 400px; } }
 
-    .btn-download { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(90deg, var(--sun-deep), var(--sun)); color: #fff; padding: 10px 22px; border-radius: 6px; font-size: 14px; font-weight: 700; text-decoration: none; transition: opacity 0.2s; box-shadow: 0 2px 8px rgba(200,140,30,0.25); margin-top: 14px; }
+    .btn-download {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(90deg, var(--sun-deep), var(--sun));
+      color: #fff; padding: 10px 22px; border-radius: 6px;
+      font-size: 14px; font-weight: 700; text-decoration: none;
+      transition: opacity 0.2s; box-shadow: 0 2px 8px rgba(200,140,30,0.25);
+      margin-top: 14px;
+    }
     .btn-download:hover { opacity: 0.88; }
-    .btn-download-outline { display: inline-flex; align-items: center; gap: 8px; background: #fff; color: var(--sun-deep); border: 2px solid var(--sun); padding: 8px 18px; border-radius: 6px; font-size: 13px; font-weight: 700; text-decoration: none; transition: background 0.2s; }
+
+    .btn-download-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #fff; color: var(--sun-deep);
+      border: 2px solid var(--sun); padding: 8px 18px; border-radius: 6px;
+      font-size: 13px; font-weight: 700; text-decoration: none;
+      transition: background 0.2s;
+    }
     .btn-download-outline:hover { background: var(--sky); }
 
-    /* アコーディオン */
-    .accordion { display: flex; flex-direction: column; gap: 8px; }
-    .acc-item { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(200,140,30,0.06); }
-    .acc-trigger { width: 100%; background: var(--sky); border: none; cursor: pointer; padding: 14px 18px; display: flex; align-items: center; gap: 10px; text-align: left; transition: background 0.2s; font-family: inherit; }
+    /* ===== Accordion ===== */
+    .accordion { display: flex; flex-direction: column; gap: 8px; margin-bottom: 8px; }
+    .acc-item {
+      border: 1px solid var(--border); border-radius: 8px;
+      overflow: hidden; box-shadow: 0 1px 4px rgba(200,140,30,0.06);
+    }
+    .acc-trigger {
+      width: 100%; background: var(--sky); border: none; cursor: pointer;
+      padding: 14px 18px; display: flex; align-items: center; gap: 10px;
+      text-align: left; transition: background 0.2s; font-family: inherit;
+    }
     .acc-trigger:hover { background: #fdeece; }
     .acc-trigger[aria-expanded="true"] { background: #fde8c3; }
     .acc-label { flex: 1; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
     .acc-year { font-size: 14px; font-weight: 700; color: var(--text); }
     .acc-period-sub { font-size: 12px; color: var(--muted); }
-    .acc-badge { font-size: 11px; border-radius: 4px; padding: 2px 10px; white-space: nowrap; font-weight: 600; background: #d4edda; color: #276238; }
-    .acc-arrow { font-size: 11px; color: var(--muted); transition: transform 0.25s ease; flex-shrink: 0; }
+    .acc-badge {
+      font-size: 11px; border-radius: 4px; padding: 2px 10px;
+      white-space: nowrap; font-weight: 600;
+      background: #d4edda; color: #276238;
+    }
+    .acc-arrow {
+      font-size: 11px; color: var(--muted);
+      transition: transform 0.25s ease; flex-shrink: 0;
+    }
     .acc-trigger[aria-expanded="true"] .acc-arrow { transform: rotate(90deg); }
     .acc-body { overflow: hidden; max-height: 0; transition: max-height 0.35s ease; }
-    .acc-body.open { max-height: 200px; }
-    .acc-content { padding: 18px 22px; background: #fff; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 12px; }
+    .acc-body.open { max-height: 160px; }
+    .acc-content {
+      padding: 18px 22px; background: #fff;
+      border-top: 1px solid var(--border);
+      display: flex; flex-direction: column; gap: 12px;
+    }
     .acc-content .meta { font-size: 12px; color: var(--muted); }
 
-    /* 法人概要 */
-    .section-gap { margin-top: 56px; }
-    .info-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; margin-top: 16px; }
-    .info-item { background: #fff; border: 1px solid var(--border); border-top: 3px solid var(--sun); border-radius: 0 0 8px 8px; padding: 14px 16px; box-shadow: 0 2px 6px rgba(200,140,30,0.06); }
-    .info-item .label { font-size: 11px; color: var(--muted); letter-spacing: 0.1em; margin-bottom: 5px; text-transform: uppercase; }
+    /* ===== Info grid ===== */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
+      gap: 14px; margin-bottom: 20px;
+    }
+    .info-item {
+      background: #fff; border: 1px solid var(--border);
+      border-top: 3px solid var(--sun);
+      border-radius: 0 0 8px 8px; padding: 14px 16px;
+      box-shadow: 0 2px 6px rgba(200,140,30,0.06);
+    }
+    .info-item .label {
+      font-size: 11px; color: var(--muted);
+      letter-spacing: 0.1em; margin-bottom: 5px; text-transform: uppercase;
+    }
     .info-item .value { font-size: 14px; font-weight: 700; color: var(--text); line-height: 1.5; }
 
-    footer { background: linear-gradient(135deg, #3a2e20, #5a4030); color: rgba(255,255,255,0.65); text-align: center; padding: 30px 20px; font-size: 12px; line-height: 2; }
+    /* ===== Footer ===== */
+    footer {
+      background: linear-gradient(135deg, #3a2e20, #5a4030);
+      color: rgba(255,255,255,0.65);
+      text-align: center; padding: 28px 20px;
+      font-size: 12px; line-height: 2;
+    }
     footer strong { color: #fff; }
-    footer .footer-logo { font-size: 22px; margin-bottom: 6px; }
   </style>
 </head>
 <body>
 
+<!-- ===== Header ===== -->
 <header>
   <img class="hero-img" src="hero.webp" alt="太陽光発電所の空撮写真" />
   <div class="header-inner">
@@ -147,53 +248,60 @@
   </div>
 </header>
 
+<!-- ===== Nav ===== -->
 <nav>
-  <a href="#kessankoukoku">📋 決算公告</a>
-  <a href="#about">🏢 法人概要</a>
+  <a href="#kessankoukoku">決算公告</a>
+  <a href="#past">過去の決算公告</a>
+  <a href="#about">法人概要</a>
 </nav>
 
-<main>
-  <section id="kessankoukoku">
-    <div class="section-banner">
-      <img src="section_disclosure.webp" alt="決算公告" />
-      <div class="section-banner-inner">
-        <div class="accent-line"></div>
-        <h2>決算公告</h2>
-        <div class="sub">Financial Disclosure — 一般社団法人及び一般財団法人に関する法律 第128条第1項</div>
-      </div>
+<!-- ===== 決算公告 ===== -->
+<section id="kessankoukoku">
+  <div class="section-banner">
+    <img src="section_disclosure.webp" alt="決算公告" />
+    <div class="section-banner-inner">
+      <div class="accent-line"></div>
+      <h2>決算公告</h2>
+      <div class="sub">Financial Disclosure &ensp;|&ensp; 一般社団法人及び一般財団法人に関する法律 第128条第1項</div>
     </div>
-
+  </div>
+  <div class="content-wrap">
     <div class="notice">
       <strong>公告について：</strong>
       当法人は、一般社団法人及び一般財団法人に関する法律第128条第1項の規定に基づき、
       下記のとおり貸借対照表の要旨を公告します。
     </div>
-
     <!-- 最新期：JSが動的に生成 -->
     <div id="latest-container"></div>
+  </div>
+</section>
 
-    <!-- 過去の決算公告 -->
-    <div class="section-banner" id="past-heading" style="display:none;">
-      <img src="section_archive.webp" alt="過去の決算公告" />
-      <div class="section-banner-inner">
-        <div class="accent-line"></div>
-        <h2>過去の決算公告</h2>
-        <div class="sub">Past Announcements — クリックで展開・ダウンロード</div>
-      </div>
+<!-- ===== 過去の決算公告 ===== -->
+<section id="past">
+  <div class="section-banner" id="past-heading" style="display:none;">
+    <img src="section_archive.webp" alt="過去の決算公告" />
+    <div class="section-banner-inner">
+      <div class="accent-line"></div>
+      <h2>過去の決算公告</h2>
+      <div class="sub">Past Announcements &ensp;|&ensp; クリックで展開・ダウンロード</div>
     </div>
+  </div>
+  <div class="content-wrap">
     <div class="accordion" id="past-container"></div>
-  </section>
+  </div>
+</section>
 
-  <!-- 法人概要 -->
-  <section id="about" class="section-gap">
-    <div class="section-banner">
-      <img src="section_about.webp" alt="法人概要" />
-      <div class="section-banner-inner">
-        <div class="accent-line"></div>
-        <h2>法人概要</h2>
-        <div class="sub">Organization Information</div>
-      </div>
+<!-- ===== 法人概要 ===== -->
+<section id="about">
+  <div class="section-banner">
+    <img src="section_about.webp" alt="法人概要" />
+    <div class="section-banner-inner">
+      <div class="accent-line"></div>
+      <h2>法人概要</h2>
+      <div class="sub">Organization Information</div>
     </div>
+  </div>
+  <div class="content-wrap">
     <div class="info-grid">
       <div class="info-item"><div class="label">法人名称</div><div class="value">一般社団法人アケル</div></div>
       <div class="info-item"><div class="label">設立年月日</div><div class="value">20XX年XX月XX日</div></div>
@@ -202,89 +310,70 @@
       <div class="info-item"><div class="label">事業年度</div><div class="value">4月1日 〜 翌3月31日</div></div>
       <div class="info-item"><div class="label">主な事業</div><div class="value">太陽光発電事業<br>再生可能エネルギー事業</div></div>
     </div>
-  </section>
-</main>
+  </div>
+</section>
 
+<!-- ===== Footer ===== -->
 <footer>
   <p><strong>一般社団法人アケル</strong></p>
   <p>〒XXX-XXXX　○○県○○市○○町X-X-X</p>
-  <p style="margin-top:8px; font-size:11px; opacity:0.5;">&copy; 一般社団法人アケル. All rights reserved.</p>
+  <p style="margin-top:6px; font-size:11px; opacity:0.45;">&copy; 一般社団法人アケル. All rights reserved.</p>
 </footer>
 
 <script>
 // =====================================================
 //  ★★★ 毎年ここだけ更新してください ★★★
-//
-//  新しい年度のPDFをGitHubの pdf/ フォルダにアップロードしたら、
-//  以下の配列の先頭に年度（数字4桁）を追加するだけです。
-//
-//  例）2027年3月期のPDFを追加した場合：
+//  新しい年度のPDFを pdf/ フォルダにアップロード後、
+//  先頭に年度（数字4桁）を追加するだけです。
+//  例）2027年3月期追加後：
 //  const YEARS = [2027, 2026, 2025, 2024];
-//
 // =====================================================
 const YEARS = [2026, 2025, 2024];
 // =====================================================
 
-// 各年度の事業年度期間を自動計算（4月〜翌3月）
-function periodLabel(year) {
-  return `${year - 1}年4月1日 〜 ${year}年3月31日`;
-}
-function balanceDate(year) {
-  return `${year}年3月31日`;
-}
-function pdfPath(year) {
-  return `pdf/${year}_BS.pdf`;
-}
-function downloadName(year) {
-  return `アケル_${year}年3月期_貸借対照表.pdf`;
-}
+function periodLabel(y) { return `${y-1}年4月1日 〜 ${y}年3月31日`; }
+function balanceDate(y)  { return `${y}年3月31日 現在`; }
+function pdfPath(y)      { return `pdf/${y}_BS.pdf`; }
+function dlName(y)       { return `アケル_${y}年3月期_貸借対照表.pdf`; }
 
-// 最新期（先頭の年度）を埋め込み表示
-const latestYear = YEARS[0];
+// 最新期
+const latest = YEARS[0];
 document.getElementById('latest-container').innerHTML = `
   <div class="latest-card">
     <div class="latest-card-header">
-      <span class="title">貸借対照表の要旨　${latestYear}年3月期</span>
-      <span class="period-label">${periodLabel(latestYear)}</span>
+      <span class="title">貸借対照表の要旨　${latest}年3月期</span>
+      <span class="period-label">${periodLabel(latest)}</span>
       <span class="badge-new">最新</span>
     </div>
     <div class="latest-card-body">
       <div class="pdf-embed-wrap">
-        <iframe
-          src="${pdfPath(latestYear)}"
-          title="${latestYear}年3月期 貸借対照表の要旨"
-          loading="lazy"
-        ></iframe>
+        <iframe src="${pdfPath(latest)}" title="${latest}年3月期 貸借対照表" loading="lazy"></iframe>
       </div>
-      <a class="btn-download" href="${pdfPath(latestYear)}" download="${downloadName(latestYear)}">
-        ⬇️ PDFをダウンロード
-      </a>
+      <a class="btn-download" href="${pdfPath(latest)}" download="${dlName(latest)}">⬇️ PDFをダウンロード</a>
     </div>
   </div>`;
 
-// 過去分（2番目以降）をアコーディオンで表示
-const pastYears = YEARS.slice(1);
-if (pastYears.length > 0) {
+// 過去分
+const past = YEARS.slice(1);
+if (past.length > 0) {
   document.getElementById('past-heading').style.display = 'block';
   const container = document.getElementById('past-container');
-  pastYears.forEach(year => {
+  past.forEach(y => {
     const item = document.createElement('div');
     item.className = 'acc-item';
     item.innerHTML = `
       <button class="acc-trigger" aria-expanded="false">
         <span class="acc-label">
-          <span class="acc-year">${year}年3月期</span>
-          <span class="acc-period-sub">（${periodLabel(year)}）</span>
+          <span class="acc-year">${y}年3月期</span>
+          <span class="acc-period-sub">（${periodLabel(y)}）</span>
         </span>
         <span class="acc-badge">公告済</span>
         <span class="acc-arrow">▶</span>
       </button>
       <div class="acc-body">
         <div class="acc-content">
-          <p class="meta">貸借対照表　${balanceDate(year)} 現在</p>
-          <a class="btn-download-outline"
-             href="${pdfPath(year)}"
-             download="${downloadName(year)}">
+          <p class="meta">貸借対照表　${balanceDate(y)}</p>
+          <a class="btn-download-outline" href="${pdfPath(y)}" download="${dlName(y)}">
             ⬇️ 貸借対照表の要旨（PDF）をダウンロード
           </a>
         </div>
@@ -293,13 +382,12 @@ if (pastYears.length > 0) {
   });
 }
 
-// アコーディオン動作
-document.querySelectorAll('.acc-trigger').forEach(trigger => {
-  trigger.addEventListener('click', () => {
-    const expanded = trigger.getAttribute('aria-expanded') === 'true';
-    const body = trigger.nextElementSibling;
-    trigger.setAttribute('aria-expanded', String(!expanded));
-    body.classList.toggle('open', !expanded);
+// アコーディオン
+document.querySelectorAll('.acc-trigger').forEach(t => {
+  t.addEventListener('click', () => {
+    const open = t.getAttribute('aria-expanded') === 'true';
+    t.setAttribute('aria-expanded', String(!open));
+    t.nextElementSibling.classList.toggle('open', !open);
   });
 });
 </script>
