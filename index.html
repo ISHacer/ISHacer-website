@@ -345,7 +345,7 @@ const latest = YEARS[0];
 document.getElementById('latest-container').innerHTML = `
   <div class="latest-card">
     <div class="latest-card-header">
-      <span class="title">貸借対照表の要旨　${latest}年3月期</span>
+      <span class="title">貸借対照表　${latest}年3月期</span>
       <span class="period-label">${periodLabel(latest)}</span>
       <span class="badge-new">最新</span>
     </div>
@@ -378,7 +378,7 @@ if (past.length > 0) {
         <div class="acc-content">
           <p class="meta">貸借対照表　${balanceDate(y)}</p>
           <a class="btn-download-outline" href="${pdfPath(y)}" download="${dlName(y)}">
-            ⬇️ 貸借対照表の要旨（PDF）をダウンロード
+            ⬇️ 貸借対照表（PDF）をダウンロード
           </a>
         </div>
       </div>`;
