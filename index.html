@@ -13,7 +13,6 @@
     }
     body { font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; color: var(--text); background: var(--warm-white); line-height: 1.75; font-size: 15px; }
 
-    /* ===== Header ===== */
     header { background: linear-gradient(135deg, #e07b00 0%, #f5a623 50%, #f7c05a 100%); color: #fff; text-align: center; position: relative; overflow: hidden; }
     header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 60%, rgba(255,255,255,0.08) 0%, transparent 50%), radial-gradient(circle at 80% 30%, rgba(255,255,255,0.06) 0%, transparent 40%); }
     .header-inner { position: relative; padding: 36px 24px 30px; }
@@ -22,96 +21,68 @@
     header h1 { font-size: clamp(24px, 6vw, 36px); font-weight: 800; letter-spacing: 0.06em; text-shadow: 0 2px 8px rgba(0,0,0,0.15); }
     header .tagline { font-size: 12px; opacity: 0.75; margin-top: 8px; letter-spacing: 0.1em; }
 
-    /* ===== Nav ===== */
     nav { background: var(--green); text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
     nav a { display: inline-block; color: #fff; padding: 11px 26px; font-size: 13px; letter-spacing: 0.06em; transition: background 0.2s; text-decoration: none; }
     nav a:hover { background: rgba(0,0,0,0.12); }
 
-    /* ===== Main ===== */
     main { max-width: var(--max-w); margin: 0 auto; padding: 44px 20px 70px; }
 
-    /* ===== Section Heading ===== */
     .section-heading { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
     .section-heading .icon { font-size: 26px; flex-shrink: 0; }
     .section-heading h2 { font-size: 21px; font-weight: 800; color: var(--sun-deep); border-bottom: 3px solid var(--sun); padding-bottom: 4px; }
     .section-heading .sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
 
-    /* ===== Notice ===== */
     .notice { background: #fff8ee; border: 1px solid #f0d9b0; border-left: 4px solid var(--sun); border-radius: 0 6px 6px 0; padding: 14px 18px; margin-bottom: 28px; font-size: 13px; color: var(--muted); line-height: 1.65; }
     .notice strong { color: var(--text); }
 
-    /* ===== Latest Card ===== */
+    /* 最新期カード */
     .latest-card { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 52px; box-shadow: 0 3px 14px rgba(200,140,30,0.10); }
     .latest-card-header { background: linear-gradient(90deg, var(--sun-deep), var(--sun)); color: #fff; padding: 15px 24px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
     .latest-card-header .title { font-size: 16px; font-weight: 700; letter-spacing: 0.04em; }
-    .latest-card-header .period { font-size: 12px; background: rgba(255,255,255,0.2); border-radius: 20px; padding: 3px 12px; }
+    .latest-card-header .period-label { font-size: 12px; background: rgba(255,255,255,0.2); border-radius: 20px; padding: 3px 12px; }
     .latest-card-header .badge-new { font-size: 11px; background: #fff; color: var(--sun-deep); border-radius: 20px; padding: 3px 12px; font-weight: 700; }
     .latest-card-body { padding: 24px; background: #fff; }
 
-    /* ===== PDF Embed ===== */
     .pdf-embed-wrap { width: 100%; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: #f5f5f5; }
     .pdf-embed-wrap iframe { width: 100%; height: 640px; border: none; display: block; }
-    .pdf-fallback { padding: 20px; text-align: center; display: none; }
+    @media (max-width: 600px) { .pdf-embed-wrap iframe { height: 420px; } }
 
-    /* ===== Download Button ===== */
-    .btn-download {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: linear-gradient(90deg, var(--sun-deep), var(--sun));
-      color: #fff; padding: 10px 22px; border-radius: 6px;
-      font-size: 14px; font-weight: 700; text-decoration: none;
-      transition: opacity 0.2s; box-shadow: 0 2px 8px rgba(200,140,30,0.25);
-      margin-top: 14px;
-    }
+    .btn-download { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(90deg, var(--sun-deep), var(--sun)); color: #fff; padding: 10px 22px; border-radius: 6px; font-size: 14px; font-weight: 700; text-decoration: none; transition: opacity 0.2s; box-shadow: 0 2px 8px rgba(200,140,30,0.25); margin-top: 14px; }
     .btn-download:hover { opacity: 0.88; }
-    .btn-download-outline {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: #fff; color: var(--sun-deep);
-      border: 2px solid var(--sun); padding: 8px 18px; border-radius: 6px;
-      font-size: 13px; font-weight: 700; text-decoration: none;
-      transition: background 0.2s;
-    }
+    .btn-download-outline { display: inline-flex; align-items: center; gap: 8px; background: #fff; color: var(--sun-deep); border: 2px solid var(--sun); padding: 8px 18px; border-radius: 6px; font-size: 13px; font-weight: 700; text-decoration: none; transition: background 0.2s; }
     .btn-download-outline:hover { background: var(--sky); }
 
-    /* ===== Accordion ===== */
+    /* アコーディオン */
     .accordion { display: flex; flex-direction: column; gap: 8px; }
     .acc-item { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(200,140,30,0.06); }
     .acc-trigger { width: 100%; background: var(--sky); border: none; cursor: pointer; padding: 14px 18px; display: flex; align-items: center; gap: 10px; text-align: left; transition: background 0.2s; font-family: inherit; }
     .acc-trigger:hover { background: #fdeece; }
     .acc-trigger[aria-expanded="true"] { background: #fde8c3; }
     .acc-label { flex: 1; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
-    .acc-period { font-size: 14px; font-weight: 700; color: var(--text); }
-    .acc-date { font-size: 12px; color: var(--muted); }
-    .acc-badge { font-size: 11px; border-radius: 4px; padding: 2px 10px; white-space: nowrap; font-weight: 600; }
-    .acc-badge.published { background: #d4edda; color: #276238; }
+    .acc-year { font-size: 14px; font-weight: 700; color: var(--text); }
+    .acc-period-sub { font-size: 12px; color: var(--muted); }
+    .acc-badge { font-size: 11px; border-radius: 4px; padding: 2px 10px; white-space: nowrap; font-weight: 600; background: #d4edda; color: #276238; }
     .acc-arrow { font-size: 11px; color: var(--muted); transition: transform 0.25s ease; flex-shrink: 0; }
     .acc-trigger[aria-expanded="true"] .acc-arrow { transform: rotate(90deg); }
     .acc-body { overflow: hidden; max-height: 0; transition: max-height 0.35s ease; }
-    .acc-body:not([hidden]) { max-height: 900px; }
-    .acc-body[hidden] { display: block !important; max-height: 0; }
-    .acc-content { padding: 20px 22px; background: #fff; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 14px; }
+    .acc-body.open { max-height: 200px; }
+    .acc-content { padding: 18px 22px; background: #fff; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 12px; }
     .acc-content .meta { font-size: 12px; color: var(--muted); }
 
-    /* ===== Company Info ===== */
+    /* 法人概要 */
     .section-gap { margin-top: 56px; }
     .info-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; margin-top: 16px; }
     .info-item { background: #fff; border: 1px solid var(--border); border-top: 3px solid var(--sun); border-radius: 0 0 8px 8px; padding: 14px 16px; box-shadow: 0 2px 6px rgba(200,140,30,0.06); }
     .info-item .label { font-size: 11px; color: var(--muted); letter-spacing: 0.1em; margin-bottom: 5px; text-transform: uppercase; }
     .info-item .value { font-size: 14px; font-weight: 700; color: var(--text); line-height: 1.5; }
 
-    /* ===== Footer ===== */
     footer { background: linear-gradient(135deg, #3a2e20, #5a4030); color: rgba(255,255,255,0.65); text-align: center; padding: 30px 20px; font-size: 12px; line-height: 2; }
     footer strong { color: #fff; }
     footer .footer-logo { font-size: 22px; margin-bottom: 6px; }
-
-    /* ===== Responsive ===== */
-    @media (max-width: 600px) {
-      .pdf-embed-wrap iframe { height: 420px; }
-    }
   </style>
 </head>
 <body>
 
-<!-- Header -->
 <header>
   <div class="header-inner">
     <div class="sun-icon">☀️</div>
@@ -121,16 +92,12 @@
   </div>
 </header>
 
-<!-- Nav -->
 <nav>
   <a href="#kessankoukoku">📋 決算公告</a>
   <a href="#about">🏢 法人概要</a>
 </nav>
 
-<!-- Main -->
 <main>
-
-  <!-- 決算公告 -->
   <section id="kessankoukoku">
     <div class="section-heading">
       <div class="icon">📋</div>
@@ -146,79 +113,18 @@
       下記のとおり貸借対照表の要旨を公告します。
     </div>
 
-    <!-- ▼ 最新期：PDF埋め込み -->
-    <div class="latest-card">
-      <div class="latest-card-header">
-        <span class="title">第◯期　貸借対照表の要旨</span>
-        <span class="period">2025年4月1日 〜 2026年3月31日</span>
-        <span class="badge-new">最新</span>
-      </div>
-      <div class="latest-card-body">
-        <div class="pdf-embed-wrap">
-          <iframe
-            src="pdf/2026_BS.pdf"
-            title="第◯期 2026年3月期 貸借対照表の要旨"
-            loading="lazy"
-          ></iframe>
-        </div>
-        <a class="btn-download" href="pdf/2026_BS.pdf" download="アケル_第◯期_2026年3月期_貸借対照表.pdf">
-          ⬇️ PDFをダウンロード
-        </a>
-      </div>
-    </div>
+    <!-- 最新期：JSが動的に生成 -->
+    <div id="latest-container"></div>
 
-    <!-- ▼ 過去の決算公告（アコーディオン） -->
-    <div class="section-heading">
+    <!-- 過去の決算公告 -->
+    <div class="section-heading" id="past-heading" style="display:none;">
       <div class="icon">🗂️</div>
       <div>
         <h2>過去の決算公告</h2>
         <div class="sub">Past Announcements — クリックで展開・ダウンロード</div>
       </div>
     </div>
-
-    <div class="accordion">
-
-      <!-- 2025年3月期 -->
-      <div class="acc-item">
-        <button class="acc-trigger" aria-expanded="false">
-          <span class="acc-label">
-            <span class="acc-period">第◯期　2025年3月期</span>
-            <span class="acc-date">（2024年4月1日 〜 2025年3月31日）</span>
-          </span>
-          <span class="acc-badge published">公告済</span>
-          <span class="acc-arrow">▶</span>
-        </button>
-        <div class="acc-body" hidden>
-          <div class="acc-content">
-            <p class="meta">貸借対照表　2025年3月31日 現在</p>
-            <a class="btn-download-outline" href="pdf/2025_BS.pdf" download="アケル_第◯期_2025年3月期_貸借対照表.pdf">
-              ⬇️ 貸借対照表の要旨（PDF）をダウンロード
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 2024年3月期 -->
-      <div class="acc-item">
-        <button class="acc-trigger" aria-expanded="false">
-          <span class="acc-label">
-            <span class="acc-period">第◯期　2024年3月期</span>
-            <span class="acc-date">（2023年4月1日 〜 2024年3月31日）</span>
-          </span>
-          <span class="acc-badge published">公告済</span>
-          <span class="acc-arrow">▶</span>
-        </button>
-        <div class="acc-body" hidden>
-          <div class="acc-content">
-            <p class="meta">貸借対照表　2024年3月31日 現在</p>
-            <a class="btn-download-outline" href="pdf/2024_BS.pdf" download="アケル_第◯期_2024年3月期_貸借対照表.pdf">
-              ⬇️ 貸借対照表の要旨（PDF）をダウンロード
-            </a>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- /.accordion -->
+    <div class="accordion" id="past-container"></div>
   </section>
 
   <!-- 法人概要 -->
@@ -239,10 +145,8 @@
       <div class="info-item"><div class="label">主な事業</div><div class="value">太陽光発電事業<br>再生可能エネルギー事業</div></div>
     </div>
   </section>
-
 </main>
 
-<!-- Footer -->
 <footer>
   <div class="footer-logo">☀️</div>
   <p><strong>一般社団法人アケル</strong></p>
@@ -251,15 +155,96 @@
 </footer>
 
 <script>
-  document.querySelectorAll('.acc-trigger').forEach(trigger => {
-    trigger.addEventListener('click', () => {
-      const expanded = trigger.getAttribute('aria-expanded') === 'true';
-      const body = trigger.nextElementSibling;
-      trigger.setAttribute('aria-expanded', String(!expanded));
-      if (expanded) body.setAttribute('hidden', '');
-      else body.removeAttribute('hidden');
-    });
+// =====================================================
+//  ★★★ 毎年ここだけ更新してください ★★★
+//
+//  新しい年度のPDFをGitHubの pdf/ フォルダにアップロードしたら、
+//  以下の配列の先頭に年度（数字4桁）を追加するだけです。
+//
+//  例）2027年3月期のPDFを追加した場合：
+//  const YEARS = [2027, 2026, 2025, 2024];
+//
+// =====================================================
+const YEARS = [2026, 2025, 2024];
+// =====================================================
+
+// 各年度の事業年度期間を自動計算（4月〜翌3月）
+function periodLabel(year) {
+  return `${year - 1}年4月1日 〜 ${year}年3月31日`;
+}
+function balanceDate(year) {
+  return `${year}年3月31日`;
+}
+function pdfPath(year) {
+  return `pdf/${year}_BS.pdf`;
+}
+function downloadName(year) {
+  return `アケル_${year}年3月期_貸借対照表.pdf`;
+}
+
+// 最新期（先頭の年度）を埋め込み表示
+const latestYear = YEARS[0];
+document.getElementById('latest-container').innerHTML = `
+  <div class="latest-card">
+    <div class="latest-card-header">
+      <span class="title">貸借対照表の要旨　${latestYear}年3月期</span>
+      <span class="period-label">${periodLabel(latestYear)}</span>
+      <span class="badge-new">最新</span>
+    </div>
+    <div class="latest-card-body">
+      <div class="pdf-embed-wrap">
+        <iframe
+          src="${pdfPath(latestYear)}"
+          title="${latestYear}年3月期 貸借対照表の要旨"
+          loading="lazy"
+        ></iframe>
+      </div>
+      <a class="btn-download" href="${pdfPath(latestYear)}" download="${downloadName(latestYear)}">
+        ⬇️ PDFをダウンロード
+      </a>
+    </div>
+  </div>`;
+
+// 過去分（2番目以降）をアコーディオンで表示
+const pastYears = YEARS.slice(1);
+if (pastYears.length > 0) {
+  document.getElementById('past-heading').style.display = 'flex';
+  const container = document.getElementById('past-container');
+  pastYears.forEach(year => {
+    const item = document.createElement('div');
+    item.className = 'acc-item';
+    item.innerHTML = `
+      <button class="acc-trigger" aria-expanded="false">
+        <span class="acc-label">
+          <span class="acc-year">${year}年3月期</span>
+          <span class="acc-period-sub">（${periodLabel(year)}）</span>
+        </span>
+        <span class="acc-badge">公告済</span>
+        <span class="acc-arrow">▶</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-content">
+          <p class="meta">貸借対照表　${balanceDate(year)} 現在</p>
+          <a class="btn-download-outline"
+             href="${pdfPath(year)}"
+             download="${downloadName(year)}">
+            ⬇️ 貸借対照表の要旨（PDF）をダウンロード
+          </a>
+        </div>
+      </div>`;
+    container.appendChild(item);
   });
+}
+
+// アコーディオン動作
+document.querySelectorAll('.acc-trigger').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const expanded = trigger.getAttribute('aria-expanded') === 'true';
+    const body = trigger.nextElementSibling;
+    trigger.setAttribute('aria-expanded', String(!expanded));
+    body.classList.toggle('open', !expanded);
+  });
+});
 </script>
 </body>
 </html>
